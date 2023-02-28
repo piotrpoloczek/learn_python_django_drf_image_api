@@ -1,0 +1,7 @@
+[{"model": "tiers.tier", "pk": 1, "fields": {"name": "Basic", "link_flag": false, "expired_link_flag": false, "size": [1]}}, 
+{"model": "tiers.tier", "pk": 2, "fields": {"name": "Premium", "link_flag": true, "expired_link_flag": false, "size": [1, 2]}}, 
+{"model": "tiers.tier", "pk": 3, "fields": {"name": "Enterprise", "link_flag": true, "expired_link_flag": true, "size": [1, 2, 3]}}, 
+{"model": "tiers.size", "pk": 1, "fields": {"height": 200}}, 
+{"model": "tiers.size", "pk": 2, "fields": {"height": 400}}, 
+{"model": "tiers.size", "pk": 3, "fields": {"height": 600}}
+]

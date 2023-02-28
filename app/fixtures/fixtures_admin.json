@@ -1,0 +1,20 @@
+[{
+    "model": "users.customuser", 
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$lEcn781vPfpMxoGk3BW1G5$wx7OYFMFONSAbxsGWyY5AcFDu2jf5+EzONQOudc4T/M=", 
+        "last_login": null, 
+        "is_superuser": true, 
+        "username": "piotr", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_staff": true, 
+        "is_active": true, 
+        "date_joined": "2023-02-26T20:48:58.823Z", 
+        "tier": 1,
+        "email": "piotr@piotr.com", 
+        "groups": [], 
+        "user_permissions": []
+        }
+    }
+]

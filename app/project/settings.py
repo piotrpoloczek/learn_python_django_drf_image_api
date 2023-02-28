@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'image',
+    'tiers',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,5 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 
 
 AUTH_USER_MODEL = "users.CustomUser"
+
+FIXTURE_DIRS = [BASE_DIR / 'fixtures']
