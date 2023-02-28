@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from users.models import CustomUser
 from tiers.models import Tier, Size
+from sorl.thumbnail import get_thumbnail, ImageField
+
 
 
 class Image(models.Model):
@@ -12,14 +14,22 @@ class Image(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         self.create_thumbnail()
-        return super().save(*args, **kwargs)
+        return self
 
     def create_thumbnail(self):
         sizes = self.author.tier.size.all()
+        
         for size in sizes:
-            thumbnail = Thumbnail.objects.create(photo=self, height=str(size).split()[0])
+            thumbnail = Thumbnail.objects.create(photo=self, height=str(size).split()[0], miniature=self.photo)
 
 
 class Thumbnail(models.Model):
     photo = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='image', null=True)
+    miniature = ImageField(upload_to='thumbnails')
     height = models.IntegerField()
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.miniature = get_thumbnail(self.miniature, '200x200', quality=99, format='JPEG').url
+        self.save()
+        return self

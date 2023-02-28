@@ -14,4 +14,4 @@ class ThumbnailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Thumbnail
-        fields = ['height', 'photo']
+        fields = ['height', 'photo', 'miniature']

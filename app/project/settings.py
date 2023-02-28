@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'users',
     'image',
     'tiers',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
