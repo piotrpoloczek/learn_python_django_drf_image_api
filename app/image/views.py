@@ -36,5 +36,5 @@ class ThumbnailViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         # after get all products on DB it will be filtered by its owner and return the queryset
-        owner_queryset = self.queryset.filter(author=self.request.user)
+        owner_queryset = self.queryset.filter(photo=Image.objects.filter(author=self.request.user)[0])
         return owner_queryset
