@@ -5,3 +5,7 @@ psycopg2-binary==2.9.1
 django-extensions
 pillow
 sorl-thumbnail==12.8
+django_resized
+Pillow
+requests
+sorl-thumbnail-serializer-field

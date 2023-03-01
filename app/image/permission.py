@@ -5,6 +5,5 @@ class IsOwner(permissions.BasePermission):
     """
     Custom permission to only allow owners of an object to view and edit.
     """
-
     def has_object_permission(self, request, view, obj):
-        return obj.author == request.user
+        return obj.author.id == request.user.id
